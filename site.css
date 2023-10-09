@@ -1,0 +1,49 @@
+/* Basic styling for the page layout */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+#reading-list {
+    min-height: 15em;
+}
+#left-pane {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+#right-pane {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.book {
+    display: flex;
+    flex-direction: row;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+/* Styling for the drag-and-drop functionality */
+.book.draggable {
+  cursor: move;
+}
+.book.dragging {
+  opacity: 0.5;
+}
+.stars {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.star {
+    color: gold;
+}
