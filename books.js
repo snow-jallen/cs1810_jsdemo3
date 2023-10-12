@@ -1,5 +1,4 @@
-export const books = {
-    "books": [
+export var books = [
       {
         "title": "To Kill a Mockingbird",
         "pages": 281,
@@ -316,4 +315,3 @@ export const books = {
         "number_sold": 1500000
       }
     ]
-  }

@@ -10,6 +10,22 @@
   <body>
     <h2>Book Library</h2>
 
+    <form id="add-form">
+        <div class = "form-control">
+            <label for="Title"> Title</label>
+            <input type="text" name="Title" id="titleInput">
+        </div>
+        <div class = "form-control">
+            <label for="description">description</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div class = "form-control">
+            <label for="rating" >Rating</label>
+            <input type="number" name="rating" id="rating">
+        </div>
+            <input type="submit"></input>
+    </form>
+    
     <div id="book-list">
       <!-- Book items will be dynamically added here -->
     </div>
