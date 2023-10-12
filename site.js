@@ -81,3 +81,36 @@ function renderStars(rating) {
 
 // Initialize the page
 displayBooks();
+
+const nameInput = document.getElementById("bookName")
+nameInput.addEventListener('input', (e) => {
+  document.getElementById("bookName-error")?.remove()
+  const validationResult = validateName(e.target.value)
+  if(validationResult) {
+    const errorDiv = document.createElement("div")
+    errorDiv.id = "bookName-error"
+    errorDiv.classList.add('error-text')
+    errorDiv.textContent = validationResult
+    nameInput.parentElement.appendChild(errorDiv)
+  }
+})
+
+const validateName = (value) => {
+  if(value.length < 1)
+    return "name too short"
+  else if(value.length > 10)
+    return "name too long"
+  return undefined
+}
+
+const addForm = document.getElementById("add-form")
+addForm.addEventListener('submit', (e) => {
+  console.log('submit ran')
+  e.preventDefault()
+  const formData = new FormData(e.target)
+  console.log(formData)
+  const newBook = {
+    title: formData.get("bookName")
+  }
+  console.log(newBook)
+})

@@ -46,3 +46,33 @@ body {
 .star {
     color: gold;
 }
+
+#add-form {
+  margin: 2em;
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+#add-form .form-control {
+  margin-top: 1em;
+}
+
+.form-control label {
+  width: 7em;
+  display: inline-block;
+  text-align: end;
+}
+
+#add-form input {
+  margin-left: .5em;
+  padding: .5em;
+  font-size: 18px;
+  border-radius: .4em;
+} 
+
+.error-text {
+  color: red;
+  font-weight: lighter;
+  font-size: medium;
+  padding-left: 11em;
+}
