@@ -1,10 +1,9 @@
 /* Basic styling for the page layout */
 body {
-  display: flex;
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
-  margin: 0;
+  margin: 3;
   font-family: Arial, sans-serif;
 }
 #reading-list {

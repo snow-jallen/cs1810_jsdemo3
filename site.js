@@ -1,10 +1,5 @@
 import { books } from "./books.js";
 
-const readingList = document.getElementById("reading-list");
-readingList.addEventListener("drop", drop);
-readingList.addEventListener("dragover", allowDrop);
-console.log("readingList", readingList);
-
 // Function to display books in the left pane
 function displayBooks() {
   const bookList = document.getElementById("book-list");
