@@ -20,13 +20,11 @@ function displayBooks() {
                 `;
     bookItem.ondragstart = drag;
     bookList.appendChild(bookItem);
-    console.log(index, book.title);
   });
 }
 
 // Drag and drop functionality
 function drag(event) {
-  console.log("drag()", event);
   event.dataTransfer.setData("text/plain", event.target.dataset.index);
 }
 
@@ -38,7 +36,6 @@ function drop(event) {
   event.preventDefault();
   const index = event.dataTransfer.getData("text/plain");
   const book = books.books[index];
-  console.log("drop()", event, index);
   const readingList = document.getElementById("reading-list");
   const bookItem = document.createElement("div");
   bookItem.className = "book";
@@ -81,36 +78,3 @@ function renderStars(rating) {
 
 // Initialize the page
 displayBooks();
-
-const nameInput = document.getElementById("bookName")
-nameInput.addEventListener('input', (e) => {
-  document.getElementById("bookName-error")?.remove()
-  const validationResult = validateName(e.target.value)
-  if(validationResult) {
-    const errorDiv = document.createElement("div")
-    errorDiv.id = "bookName-error"
-    errorDiv.classList.add('error-text')
-    errorDiv.textContent = validationResult
-    nameInput.parentElement.appendChild(errorDiv)
-  }
-})
-
-const validateName = (value) => {
-  if(value.length < 1)
-    return "name too short"
-  else if(value.length > 10)
-    return "name too long"
-  return undefined
-}
-
-const addForm = document.getElementById("add-form")
-addForm.addEventListener('submit', (e) => {
-  console.log('submit ran')
-  e.preventDefault()
-  const formData = new FormData(e.target)
-  console.log(formData)
-  const newBook = {
-    title: formData.get("bookName")
-  }
-  console.log(newBook)
-})
